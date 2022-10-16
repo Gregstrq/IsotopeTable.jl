@@ -38,16 +38,16 @@ Correspondingly, `elements[isotopes[:C12]]` or `elements(isotopes[:C12])` return
 
 When you look up an isotope in the REPL, the data is pretty printed:
 ```julia
-julia> isotopes[:H3]
-Hydrogen ³H, Z=1:
-               atomic number: 1
-                 mass number: 3
-           natural abundance: 0.0
-                        mass: 3.01604928132 ± 8.0e-11 u
-                        spin: 1//2
+julia> isotopes[:C12]
+Carbon ¹²C, Z=6:
+               atomic number: 6
+                 mass number: 12
+           natural abundance: 98.94
+                        mass: 12.0 ± 0.0 u
+                        spin: 0//1
                       parity: 1
-              is radioactive: true
-                   half-life: 3.8878e8 ± 630000.0 s
-                    g-factor: 5.95792492 ± 2.8e-8
+              is radioactive: false
+                   half-life: Inf ± 0.0 s
+                    g-factor: 0.0 ± 0.0
   electric quadrupole moment: 0.0 ± 0.0 barn
 ```
