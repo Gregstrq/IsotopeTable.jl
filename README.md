@@ -26,6 +26,16 @@ These are all the valid ways to access information about it:
 | name + mass number      | `isotopes["carbon12"]`       | `isotopes("carbon12")`        |
 | Element, mass number    | `isotopes[elements[:C], 12]` | `isotopes(elements[:C], 12)`  |
 
+Also isomers (metastable states) can be accessed. The ground state is selected by using the standard way mentioned above. For the metastable states, the letter "m" is appended together with an index 1, 2, 3, ... Take, Np236 for example:
+
+|                         | indexing interface           | function interface            |
+| :---------------------- | :-----------------           | :-----------------            |
+| atomic and mass numbers | `isotopes[93, 236]`            | `isotopes(93, 236)`             |
+| atomic, mass numbers, isomeric state | `isotopes[93, 236, 1]`            | `isotopes(93, 236, 1)`             |
+| symbol, mass number, isomeric state    | `isotopes[:Np, 236, 1]`           | `isotopes(:Np, 236, 1)`            |
+| name, mass number, isomeric state       | `isotopes["neptunium", 236, 1]`     | `isotopes("neptunium", 236, 1)`      |
+| name + mass number + isomeric state     | `isotopes["neptunium236m1"]`       | `isotopes("neptunium236m1")`        |
+
 ### Interfacing with PeriodicTable.jl
 
 As we have already seen, we can use an `Element` in place of atomic number to access a particular isotope.
@@ -42,6 +52,7 @@ julia> isotopes[:C12]
 Carbon ¹²C, Z=6:
                atomic number: 6
                  mass number: 12
+                 isomeric state: Ground state
            natural abundance: 98.94
                         mass: 12.0 ± 0.0 u
                         spin: 0//1
@@ -50,4 +61,19 @@ Carbon ¹²C, Z=6:
                    half-life: Inf ± 0.0 s
                     g-factor: 0.0 ± 0.0
   electric quadrupole moment: 0.0 ± 0.0 barn
+```
+
+Or the first metastable state of Neptunium-236:
+```julia
+julia> isotopes[:Np236m1]
+Neptunium ²³⁶⁻¹Np, Z=93:
+               atomic number: 93
+                 mass number: 236
+              isomeric state: 1st metastable state
+           natural abundance: 0.0
+                        mass: 236.046568 ± 5.4e-5 u
+                        spin: 1//1
+                      parity: -1
+              is radioactive: true
+                   half-life: 810000.0 ± 1400.0 s
 ```
