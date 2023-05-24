@@ -12,9 +12,9 @@ Similarly to [PeriodicTable.jl](https://github.com/JuliaPhysics/PeriodicTable.jl
 
 ### Accessing Isotopes
 
-In this package, we consider only the isotopes in the nuclear ground states. Therefore, each isotope is uniquely identified by its atomic number (number of protons) and mass number (total number of protons and neutrons). Each isotope corresponds to a unique element of Periodic Table, which has the same atomic number. As such, instead of atomic number, one can use interchangeably element symbol, element name (case insensitive) and even `Element` structure from `PeriodicTable.jl` itself!
+In this package, we consider nuclides in the nuclear ground states and metastable states. Therefore, each nuclide is uniquely identified by its atomic number (number of protons), mass number (total number of protons and neutrons) and metastable state (ground state, first metastable state etc.). Each nuclide corresponds to a unique element of Periodic Table, which has the same atomic number. As such, instead of atomic number, one can use interchangeably element symbol, element name (case insensitive) and even `Element` structure from `PeriodicTable.jl` itself!
 
-Let's consider the isotope ¹²C, which has atomic number 6 and mass number 12.
+Let's consider the nuclide ¹²C, which has atomic number 6 and mass number 12.
 These are all the valid ways to access information about it:
 
 |                         | indexing interface           | function interface            |
