@@ -49131,7 +49131,7 @@ _isotopes_data = [
         spin = 1//1,
         parity = -1,
         is_radioactive = true,
-        half_life = (8.1e5 ± 1.44e3) * s,
+        half_life = (8.1e4 ± 1.44e2) * s,
         gfactor = missing,
         quadrupole_moment = missing
     ),
