@@ -42,7 +42,7 @@ julia> isotopes[:C12]
 Carbon ¹²C, Z=6:
                atomic number: 6
                  mass number: 12
-           natural abundance: 98.94
+           natural abundance: 98.94 ± 0.06
                         mass: 12.0 ± 0.0 u
                         spin: 0//1
                       parity: 1

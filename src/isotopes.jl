@@ -7,7 +7,7 @@ struct Isotope
     isot_symbol::String
 	atomic_number::Int
 	mass_number::Int
-	abundance::Float64
+    abundance::typeof(0.0 ± 0.0)
     mass::typeof((1.0±1.0)u)
 	spin::Rational{Int}
     parity::Int
@@ -22,7 +22,7 @@ Isotope(; name=missing,
           isot_symbol=missing,
           atomic_number=missing,
           mass_number=missing,
-          abundance=0.0,
+    	  abundance=missing,
           mass=missing,
           spin=missing,
           parity=missing,
@@ -30,7 +30,7 @@ Isotope(; name=missing,
           half_life=missing,
           gfactor=missing,
           quadrupole_moment=missing
-       ) = 
+       ) =
 Isotope(name, symbol, isot_symbol, atomic_number, mass_number, abundance, mass, spin, parity, is_radioactive, half_life, gfactor, quadrupole_moment)
 
 function print_parity(io::IO, parity; pad=28)
