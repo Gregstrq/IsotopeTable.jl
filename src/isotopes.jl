@@ -38,11 +38,7 @@ function print_parity(io::IO, parity; pad=28)
         println(io, lpad("parity", pad), ": ", parity)
     end
 end
-function printpresent_Δ(io::IO, name, val, suffix="";pad=28)
-    if !ismissing(val)
-        println(io, lpad(name, pad), ": ", ustrip(val), suffix)
-    end
-end
+ispresent(::Missing) = false
 
 Base.repr(istp::Isotope) = print("isotopes(", istp.name, ", ", istp.mass_number, ")")
 Base.show(io::IO, istp::Isotope) = print(io, istp.isot_symbol)
@@ -52,13 +48,13 @@ function Base.show(io::IO, ::MIME"text/plain", istp::Isotope)
 	printpresent(io, "atomic number", istp.atomic_number; pad=28)
 	printpresent(io, "mass number", istp.mass_number; pad=28)
 	printpresent(io, "natural abundance", istp.abundance; pad=28)
-	printpresent_Δ(io, "mass", istp.mass, " u"; pad=28)
+	printpresent(io, "mass", istp.mass, " u"; pad=28)
 	printpresent(io, "spin", istp.spin; pad=28)
 	print_parity(io, istp.parity; pad=28)
 	printpresent(io, "is radioactive", istp.is_radioactive; pad=28)
-    printpresent_Δ(io, "half-life", istp.half_life, " s"; pad=28)
-	printpresent_Δ(io, "g-factor", istp.gfactor; pad=28)
-	printpresent_Δ(io, "electric quadrupole moment", istp.quadrupole_moment, " barn"; pad=28)
+    printpresent(io, "half-life", istp.half_life, " s"; pad=28)
+	printpresent(io, "g-factor", istp.gfactor; pad=28)
+	printpresent(io, "electric quadrupole moment", istp.quadrupole_moment, " barn"; pad=28)
 end
 
 """

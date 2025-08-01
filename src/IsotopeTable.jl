@@ -15,7 +15,7 @@ module IsotopeTable
 
 using Reexport, Unitful, Measurements
 @reexport using PeriodicTable
-import PeriodicTable: printpresent
+import PeriodicTable: printpresent, ispresent
 
 export Element, elements, Isotope, isotopes, isotopes_df
 
